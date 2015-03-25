@@ -1,7 +1,7 @@
 //placeholder
 //by DOLLOR
 ~(function($,w){
-	w.placeholder=function($ele,css_style){
+	var placeholderPolyfill=function($ele,css_style){
 		$ele=$ele || $("[placeholder]");
 		css_style=css_style || {};
 		//删除旧的
@@ -58,4 +58,5 @@
 			});
 		})($ele);
 	};
+	w.placeholderPolyfill = w.placeholderPolyfill || placeholderPolyfill;
 })(jQuery,window);
