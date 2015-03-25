@@ -10,7 +10,18 @@
 	<script src="js/jquery-1.11.2.min.js" type="text/javascript"></script>
 	<script src="../src/placeholder.js" type="text/javascript"></script>
 	<script type="text/javascript">
-		placeholder();
+		var iev=(function(ieua){
+			if(!ieua){
+				return 100;
+			}
+			else{
+				return ieua[0].match(/[0-9]{1,2}/)[0]*1
+			}
+		})(navigator.userAgent.match(/MSIE [0-9]{1,2}/));
+		console.log(iev);
+		if(iev<=9){
+			placeholder();
+		}
 	</script>
 </body>
 </html>
