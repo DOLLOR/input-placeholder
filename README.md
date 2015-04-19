@@ -16,6 +16,7 @@ Any argument can be omitted. | 任何参数都可省略。
 
 ```js
 	placeholderPolyfill($(selector));
+	//or
 	placeholderPolyfill(null,{"color":"#f00"});
 	//Even all can be omitted
 	placeholderPolyfill();
@@ -28,16 +29,7 @@ You neet to detect the IE version by yourself. And the demo show as examples how
 需要自行判断IE版本。可参考例子。
 
 ```js
-	var iev=(function(ieua){
-		if(!ieua){
-			return 100;
-		}
-		else{
-			return ieua[0].match(/[0-9]{1,2}/)[0]*1
-		}
-	})(navigator.userAgent.match(/MSIE [0-9]{1,2}/));
-	//console.log(iev);
-	if(iev<=9){
+	if(typeof document.createElement("input").placeholder !== "string"){
 		placeholderPolyfill();
 	}
 ```
